@@ -1,0 +1,127 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.Blur_Page {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  z-index: 3;
+  background: rgba(0, 0, 0, .7);
+}
+
+.Central_Float_Page {
+  position: fixed;
+  z-index: 3;
+  overflow: auto;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%);
+
+  @include apply-theme() {
+    background: t(content);
+  }
+
+  @include content-metrics;
+
+  &.User_Search_Float_Page {
+    overflow: visible;
+
+    .ArrowSelect_Icon {
+      display: none;
+    }
+
+    .InputDataList_List::before {
+      content: 'Pesquisas Recentes';
+      padding: 20px;
+      @include apply-font(assistant);
+    }
+  } 
+
+  *:not(.Content_Divisor) > &.AlertConfirm_Float_Page {
+    max-width: 600px;
+    min-width: 600px;
+  }
+
+  .Mobile *:not(.Content_Divisor) > &.AlertConfirm_Float_Page {
+    max-width: calc(100% - 20px);
+    width: calc(100% - 20px);
+  }
+}
+
+.Lateral_Float_Page {
+  position: fixed;
+  width: 400px;
+  height: 100vh;
+  z-index: 3;
+  overflow: auto;
+
+  .Mobile & {
+    width: 100%;
+  }
+
+  @include apply-theme() {
+    background: t(content);
+  }
+
+  .Float_Page_Line, .User_Notification_Preview {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    user-select: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    position: relative;
+    transition: background 300ms ease;
+    @include apply-font('span');
+    
+    &[data-isRead=false] {
+      font-weight: 600;
+    }
+    
+    @include apply-theme() {
+      border-bottom-color: t(element-border);
+    }
+
+    &:not(.Float_Page_Header, .Static):hover {
+      cursor: pointer;
+      @include apply-theme() {
+        background-color: t('hover');
+      }
+    }
+  }
+
+  .Theme_Switch label {
+    pointer-events: none;
+  }
+
+  .Float_Page_Header {
+    padding: 20px 30px;
+    user-select: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    position: relative;
+    user-select: none;
+
+    @include apply-theme() {
+      border-bottom-color: t(element-border);
+    }
+  }
+
+  .UserNotify_Config_Icon {
+    width: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.Float_Page_Close {
+  width: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

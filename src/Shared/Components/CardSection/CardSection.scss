@@ -1,0 +1,32 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.CardSection_Container {
+  background-color: #FFFFFF;
+  border-color: #DDD;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 14%);
+  margin: 2px;
+  margin-bottom: 20px;
+
+  header {
+    align-items: flex-start;
+    align-items: flex-start;
+    padding: 30px;
+
+    h1 {
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      color: #6f6f6f;
+    }
+  }
+
+  .CardSection_Content {
+    padding: 30px;
+    padding-top: 0px;
+  }
+}

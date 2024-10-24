@@ -1,0 +1,186 @@
+@mixin content-metrics {
+  min-width: 720px;
+  width: 1000px;
+  max-width: 100%;
+
+  .Mobile & {
+    min-width: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  height: fit-content;
+}
+
+a {
+  cursor: pointer;
+}
+
+.Content_Divisor {
+  display: flex;
+  gap: 20px;
+  box-sizing: border-box;
+  @include content-metrics;
+
+  .Mobile & {
+    flex-direction: column;
+  }
+}
+
+.Content_Block {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #00000029;
+
+  *:not(.Content_Divisor) > & {
+    @include content-metrics;
+  }
+
+  .Content_Divisor > & {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Content_Header {
+    @include apply-font('b');
+    padding: 20px 30px;
+
+    &:not(:only-child) {
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      @include apply-theme() {
+        border-color: t(element-border);
+      }
+    }
+
+    a {
+      position: relative;
+    }
+  }
+
+  .Content_Footer {
+    @include apply-font('b');
+    padding: 20px 30px;
+
+    &:not(:only-child) {
+      border-top-style: solid;
+      border-top-width: 2px;
+      @include apply-theme() {
+        border-color: t(element-border);
+      }
+    }
+  }
+
+  .Content_Container {
+    position: relative;
+    & > div {
+      &:last-child {
+        padding-bottom: 30px;
+      }
+
+      &:first-child {
+        padding-top: 30px;
+      }
+
+      &:only-child {
+        min-height: 120px;
+      }
+
+      padding: 15px 30px;
+      position: relative;
+    }
+  }
+
+  @include apply-theme() {
+    background-color: t(content);
+    border-color: t(element-border);
+  } 
+}
+
+.Content_List {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  align-items: flex-start;
+
+  thead {
+    width: 100%;
+    padding: 20px 30px;
+    border-bottom: 1px solid;
+    @include apply-theme() {
+      border-color: t(element-border);
+    }
+    tr th:not(:only-child):last-child {
+      display: flex;
+      width: 100%;
+      text-align: right;
+      justify-content: flex-end;
+    }
+  }
+  
+  tbody {
+    width: 100%;
+    tr {
+      width: 100%;
+      padding: 30px 30px;
+      td {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      td:not(:only-child):last-child {
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .Action_List {
+    @include apply-theme() {
+      background-color: t(body);
+      border-color: t(element-border);
+    }
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    span {
+      cursor: pointer;
+      padding: 10px 15px;  
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      &:first-child {
+        border-radius: 10px 10px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 10px 10px;
+      }
+      &:only-child {
+        border-radius: 10px;
+      }
+      &:hover {
+        @include apply-theme() {
+          background-color: t(hover);
+        }
+      }
+    }
+  }
+  
+  tr {
+    display: grid;
+  }
+}

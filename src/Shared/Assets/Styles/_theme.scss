@@ -1,0 +1,91 @@
+$themes: (
+  default: (
+    body: #F9F9F9,
+    content: #FFFFFF,
+    text: #444444,
+    hover: #F1F1F1,
+    header-bottom: #FFFFFF,
+
+    contrast: #FC5003,
+    contrast-text: #FFFFFF,
+    
+    element-border: #F0F0F0,
+    
+    input-hover: red,
+    input-box: #F5F5F5,
+    input-background: #FFFFFF,
+    input-deactivated: #F9F9F9,
+    input-border: #CCCCCC,
+    
+    success-color: #86AF15,
+    success-background: #F8FAF2,
+
+    error-color: #D82828,
+    error-background: #FCF6F3,
+
+    info-title: #ffbc34,
+    info-color: #856404,
+    info-background: #fff3cd,
+
+    menu-icon: #FFFFFF
+  ),
+  dark: (
+    body: #333333,
+    content: #333333,
+    text: #FFFFFF,
+    hover: #404040,
+    header-bottom: #222222,
+
+    contrast: #FC5003,
+    contrast-text: #FFFFFF,
+
+    element-border: #444444,
+
+    input-box: #333333,
+    input-background: #222222,
+    input-deactivated: #444444,
+    input-border: #444444,
+
+    success-color: #86AF15,
+    success-background: #F8FAF2,
+
+    error-color: #D82828,
+    error-background: #FCF6F3,
+
+    info-title: #ffbc34,
+    info-color: #856404,
+    info-background: #fff3cd,
+
+    menu-icon: #FFFFFF
+  )
+);
+
+@mixin apply-transition($transition-property: 'auto') {
+  transition: background 300ms ease, color 600ms ease, #{$transition-property};
+}
+
+@mixin apply-theme() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key)
+}
+
+@each $theme, $map in $themes {
+  .theme--#{$theme} {
+    background-color: map-get($map, 'body');
+    color: map-get($map, 'text');
+  }
+}

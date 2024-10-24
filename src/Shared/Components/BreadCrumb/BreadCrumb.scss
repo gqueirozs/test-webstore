@@ -1,0 +1,24 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.Float_Header .BreadCrumb_Container {
+  display: none;
+}
+
+.BreadCrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+
+  svg {
+    stroke: #999999;
+    transform: rotate(-90deg) scale(.5);
+  }
+
+  li, li a {
+    @include apply-font(assistant);
+    text-decoration: none;
+  }
+}

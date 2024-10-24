@@ -1,0 +1,34 @@
+@import 'Shared/Assets/Styles/_fonts.scss';
+@import 'Shared/Assets/Styles/_theme.scss';
+
+
+.Content_Block .Content_Container > .Font_Container {
+  padding: 30px 30px;
+
+  &.Font_Container:not(:last-child) {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    @include apply-theme() {
+      border-bottom-color: t(element-border);
+    }
+  }
+}
+
+.Icon_Box {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  position: relative;
+  
+  @include apply-theme() {
+    border-color: t('element-border');
+    background-color: t(input-background);
+    color: t(text);
+  }
+}

@@ -1,0 +1,111 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+header {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .Header_Top {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 30px;
+    position: absolute;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+
+    @include apply-theme() {
+      border-bottom-color: t(element-border);
+      background-color: t(body);
+    }
+  }
+
+  .Header_Bottom {
+    transition: height 300ms, padding 300ms, margin-top 300ms;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0,.1);
+    z-index: 2;
+
+    @include apply-theme() {
+      background-color: t(header-bottom);
+    }
+
+    & > div {
+      @include content-metrics;
+    }
+
+    margin-top: 70px;
+    
+  }
+
+  &.Float_Header {
+    .Header_Bottom {
+      margin-top: 0;
+      padding: 10px 0;
+    }
+  }
+
+  .Header_Icon {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    height: 40px;
+    box-sizing: border-box;
+
+    .Mobile &:not(.UserMenu_Icon) {
+      height: 60px;
+      padding: 0 15px;
+    }
+
+    &.UserMenu_Icon {
+
+      .Mobile & {
+        height: 30px;
+        width: 30px;
+        padding: 0;
+      }
+
+      border-radius: 100px;
+
+      @include apply-theme() {
+        background-color: t(text);
+        color: t(content);
+      }
+
+      svg {
+        @include apply-theme() {
+          fill: t(content);
+          stroke: t(content);
+        }
+      }
+    }
+
+    svg {
+      @include apply-theme() {
+        stroke: t(color);
+        fill: t(color);
+      }
+    }
+  }
+
+  .Mobile & {
+    height: 60px;
+    box-shadow: 0px 0px 10px #00000029;
+    justify-content: space-between;
+    padding: 0 15px 0 20px;
+    position: relative;
+    flex-direction: row;
+  }
+}

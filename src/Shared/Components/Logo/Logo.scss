@@ -1,0 +1,18 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.Logo_Anchor {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 25px);
+  width: 30px;
+
+  @include apply-theme() {
+    svg {
+      fill: white;
+      stroke: white;
+    }
+  }
+
+}

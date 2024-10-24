@@ -1,0 +1,26 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.CustomSelect_Container.OrdersSelect_Container .InputText_Container {
+  .ArrowSelect_Icon svg {
+    stroke: #333333;
+  }
+
+  .InputText.Not_ReadOnly {
+    @include apply-theme() {
+      &.FFFBE3 {
+        color: #444444;
+        background-color: #FFFBE3;
+      }
+
+      &.EAFFD5 {
+        color: #444444;
+        background-color: #EAFFD5;
+      }
+
+      &.FFDBDB {
+        color: #444444;
+        background-color: #FFDBDB;
+      }
+    }
+  }
+}

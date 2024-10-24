@@ -1,0 +1,346 @@
+{
+  "Cadastros": {
+    "Icon": "Box",
+    "AriaLabel": "",
+    "Mobile": true,
+    "Links": [
+      {
+        "label": "Cadastros",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Produtos",
+        "title": false,
+        "link": "/products/create"
+      },
+      {
+        "label": "Categorias",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Kits",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Grades",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Características",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Campos adicionais",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Fabricantes",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Fornecedore",
+        "title": false,
+        "link": ""
+      }
+    ]
+  },
+  "Pedidos": {
+    "Icon": "ShopBag",
+    "AriaLabel": "",
+    "Mobile": true,
+    "Links": [
+      {
+        "label": "Pedidos",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Todos os pedidos",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Arquivados",
+        "title": false,
+        "link": ""
+      }
+    ]
+  },
+  "Clientes": {
+    "Icon": "UserGroup",
+    "AriaLabel": "",
+    "Mobile": true,
+    "Links": [
+      {
+        "label": "Clientes",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Todos os clientes",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Grupos",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Grupos Cadastro de newsletter (lead)",
+        "title": false,
+        "link": ""
+      }
+    ]
+  },
+  "Relatórios": {
+    "Icon": "Graph",
+    "AriaLabel": "",
+    "Mobile": true,
+    "Links": [
+      {
+        "label": "Relatórios",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Visão geral",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Pedidos",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Produtos",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Acessos",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Clientes",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Reposição de estoque",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Custo e lucro",
+        "title": false,
+        "link": ""
+      }
+    ]
+  },
+  "Configurações": {
+    "Icon": "Configs",
+    "AriaLabel": "",
+    "Mobile": false,
+    "Links": [
+      {
+        "label": "Configurações",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Geral",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Pagamento",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Logística",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Otimização (SEO)",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Promoções",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Domínio e e-mail",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "E-mails padrões",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Layout",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Temas Banners",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Informações de contato",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Páginas adicionais",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Grupo de produtos",
+        "title": false,
+        "link": ""
+      }
+    ]
+  },
+  "Aplicativos": {
+    "Icon": "MenuGrid",
+    "ArialLabel": "",
+    "Mobile": false,
+    "Links": [
+      {
+        "label": "Aplicativos",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Ver todos",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Gestão",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Marketplaces",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Atendimento",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Pagamento",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Logística",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Segurança",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Marketing e vendas",
+        "title": false,
+        "link": ""
+      },
+      {
+        "label": "Ferramentas",
+        "title": false,
+        "link": ""
+      }
+    ]
+  },
+  "Biblioteca": {
+    "Icon": "Box",
+    "ArialLabel": "",
+    "Mobile": true,
+    "Links": [
+      {
+        "label": "Biblioteca",
+        "title": true,
+        "link": ""
+      },
+      {
+        "label": "Fontes",
+        "title": false,
+        "link": "/library/fonts"
+      },
+      {
+        "label": "Campos de Texto",
+        "title": false,
+        "link": "/library/textfields"
+      },
+      {
+        "label": "Inputs de Seleção",
+        "title": false,
+        "link": "/library/select"
+      },
+      {
+        "label": "Campos de Check-in",
+        "title": false,
+        "link": "/library/checkfields"
+      },
+      {
+        "label": "Range",
+        "title": false,
+        "link": "/library/range"
+      },
+      {
+        "label": "TextAreas",
+        "title": false,
+        "link": "/library/textareas"
+      },
+      {
+        "label": "Botões",
+        "title": false,
+        "link": "/library/buttons"
+      },
+      {
+        "label": "Upload de Imagem",
+        "title": false,
+        "link": "/library/imageupload"
+      },
+      {
+        "label": "Alertas",
+        "title": false,
+        "link": "/library/alerts"
+      },
+      {
+        "label": "Tags",
+        "title": false,
+        "link": "/library/tags"
+      },
+      {
+        "label": "Ícones",
+        "title": false,
+        "link": "/library/icons"
+      }
+    ]
+  }
+}

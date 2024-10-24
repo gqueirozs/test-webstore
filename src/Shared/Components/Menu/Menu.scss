@@ -1,0 +1,105 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.Menu_Nav_Container {
+  position: fixed;
+  width: 320px;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: 3px 3px 20px #0000001A;
+  z-index: 3;
+
+  @include apply-theme() {
+    background: t(body);
+  }
+
+  .Mobile & {
+   width: 100%;
+  }
+
+  ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    user-select: none;
+  }
+}
+
+.Menu_Icon_List {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  @include apply-theme() {
+    background-color: t(contrast);
+  }
+
+  .Mobile & {
+    width: 100%;
+    flex-direction: row;
+
+    li {
+      width: 60px;
+      min-width: 60px;
+
+      &.Animated_Icon {
+        left: 0;
+        border-radius: 100%;
+        width: 60px;
+      }
+
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    position: relative;
+    height: 60px;
+
+    &.Animated_Icon {
+      position: absolute;
+      width: calc(100% - 5px);
+      left: 5px;
+      border-radius: 100px 0 0 100px;
+      pointer-events: none;
+      z-index: -1;
+
+      @include apply-theme() {
+        background: t(body);
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    &.active svg {
+      @include apply-theme() {
+        stroke: t(contrast);
+        fill: t(contrast);
+      }
+    }
+
+    svg {
+      transition: stroke 300ms ease-out;
+      @include apply-theme() {
+        stroke: t(menu-icon);
+        fill: t(menu-icon);
+      }
+    }
+  }
+}

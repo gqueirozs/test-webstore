@@ -1,0 +1,105 @@
+.Flex_Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Flex_Row_Reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Flex_Column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Align_Center {
+  display: flex;
+  align-items: center;
+}
+
+.Align_End {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Align_Stretch {
+  display: flex;
+  align-items: stretch;
+}
+
+.Align_Baseline {
+  display: flex;
+  align-items: baseline;
+}
+
+.Justify_Center {
+  display: flex;
+  justify-content: center;
+}
+
+.Justify_End {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Justify_Between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 to 7 {
+  .g-#{$i} {
+    gap: #{(5 * $i) + 'px'};
+  }
+  
+  .p-#{$i} {
+    padding: #{(5 * $i) + 'px'};;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{(5 * $i) + 'px'};;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{(5 * $i) + 'px'};;
+  }
+
+  .pt-#{$i} {
+    padding-top: #{(5 * $i) + 'px'};;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: #{(5 * $i) + 'px'};;
+  }
+
+  .m-#{$i} {
+    margin: #{(5 * $i) + 'px'};
+  }
+  .mb-#{$i} {
+    margin-bottom: #{(5 * $i) + 'px'};
+  }
+  .mt-#{$i} {
+    margin-top: #{(5 * $i) + 'px'};
+  }
+  .ml-#{$i} {
+    margin-left: #{(5 * $i) + 'px'};
+  }
+  .mr-#{$i} {
+    margin-right: #{(5 * $i) + 'px'};
+  }
+
+}
+
+.Flex_Auto {
+  display: flex;
+
+  .Mobile & {
+    flex-direction: column;
+  }
+}

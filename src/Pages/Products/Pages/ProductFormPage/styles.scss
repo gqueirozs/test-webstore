@@ -1,0 +1,60 @@
+@import '../../../../Shared//Assets//Styles/main';
+
+.Cards_Container {
+  display: flex;
+  width: 90%;
+
+  .Cards_LeftColumn {
+    flex: 0.6;
+    margin-right: 10px;
+  }
+
+  .Cards_RightColumn {
+    flex: 0.4;
+    margin-left: 10px;
+  }
+}
+
+.Cards_CheckboxSection {
+  margin-top: 20px;
+
+  .Cards_CheckboxSectionTitle {
+    font-weight: bold;
+  }
+}
+
+.Product_VariationsSelecteds {
+  border-top: 1px solid #cccccc;
+  margin-top: 14px;
+
+  .Product_VariationsSelecteds_Content {
+    width: 50%;
+    margin-top: 40px;
+  }
+}
+
+.Input_Columns {
+  display: flex;
+  gap: 20px;
+}
+
+.Categories_Table {
+  width: 100%;
+  table-layout: fixed;
+  margin-top: 30px;
+
+  th {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}

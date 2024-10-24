@@ -1,0 +1,569 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+label {
+  user-select: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  appearance: initial;
+  resize: none;
+  @include apply-font('span');
+  font-family: 'Poppins', sans-serif;
+}
+
+.InputText_Container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include apply-theme() {
+    background-color: t(content);
+  }
+
+  &.Size_Full {
+    width: 100%;
+  }
+
+  &.Size_Medium {
+    width: 75%;
+  }
+
+  &.Size_Half {
+    width: 50%;
+  }
+
+  &.Size_Minimum {
+    width: 25%;
+  }
+
+  .InputText_Holder {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &[data-error] {
+      &::after {
+        content: attr(data-error);
+        bottom: 0;
+        left: 0;
+
+        @include apply-font('error');
+      }
+
+      .InputText {
+        background-color: #FFF8F8;
+        border-color: #FFB2B2;
+      }
+    }
+  }
+
+  .InputChar_Count {
+    position: absolute;
+    right: 0;
+  }
+
+  .Icon_Align_Left>.InputText {
+    padding-left: 50px;
+  }
+
+  .Icon_Align_Right>.InputText {
+    padding-right: 50px;
+  }
+
+  .InputText {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 12px 20px;
+    transition: border-color 300ms ease, height 300ms ease-out;
+
+    @include apply-theme() {
+      border-color: t(input-border);
+    }
+
+    &.Not_ReadOnly {
+      cursor: pointer;
+    }
+
+    &:not(:read-only),
+    &.Not_ReadOnly {
+      @include apply-theme() {
+        color: t(text);
+        background-color: t(input-background);
+      }
+
+      &:hover,
+      &.Hover {
+        border-color: #808080;
+      }
+
+      &:focus,
+      &.Focus {
+        border-color: #438FE8;
+      }
+    }
+
+    &:not(.Not_ReadOnly):read-only {
+      cursor: pointer;
+
+      @include apply-theme() {
+        background-color: t(input-deactivated);
+      }
+
+      @include apply-font(placeholder)
+    }
+
+    &::placeholder {
+      @include apply-font(placeholder)
+    }
+
+    &:is(textarea)::placeholder {
+      line-height: inherit;
+    }
+  }
+
+  .InputText_Icon {
+    position: absolute;
+    left: 0;
+    padding: 0 15px;
+    border-radius: 5px;
+    height: calc(100% - 2px);
+    transform: translate(1px, 1px);
+    display: flex;
+    align-items: center;
+
+    &.Icon_Style_Box {
+      @include apply-theme() {
+        background-color: t(input-box);
+        color: #444444;
+        fill: #444444;
+        stroke: #444444;
+      }
+    }
+
+    &.Icon_Align_Right {
+      right: 0;
+      left: auto;
+      transform: translate(-1px, 1px);
+    }
+
+  }
+}
+
+
+.InputCheckbox_Container,
+.InputRadio_Container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.InputCheckbox,
+.InputRadio {
+  border: solid 1px #CCCCCC;
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: border-color 200ms ease, background 200ms ease;
+  opacity: 0.5;
+
+  & + svg {
+    opacity: .5;
+    transition: left 200ms ease, right 200ms ease, stroke 200ms ease;
+    pointer-events: none;
+  }
+
+  &:not(:disabled) {
+    opacity: 1;
+    cursor: pointer;
+
+    & + svg {
+      opacity: 1;
+    }
+
+    &:focus,
+    &:hover {
+      border-color: #1974D0;
+    }
+  }
+
+  &:checked {
+    background-color: #1974D0;
+    border-color: #1974D0;
+  }
+  
+  :not(.Style_Switch) > &.InputRadio {
+    border-radius: 100%;
+
+    &:checked {
+      border-width: 4.45px;
+      background-color: #FFFFFF;
+    }
+  }
+
+  :not(.Style_Switch) > &.InputCheckbox {
+    background-size: 10px;
+
+    &:checked {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iI0ZGRiI+PHBhdGggZD0iTTIwLjI4NSAyIDkgMTMuNTY3IDMuNzE0IDguNTU2IDAgMTIuMjcyIDkgMjEgMjQgNS43MTV6Ii8+PC9zdmc+);
+    }
+  }
+
+  .Style_Switch > & {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    aspect-ratio: 2 / 1;
+    border-radius: 100px;
+    border: 1px solid #CCCCCC;
+
+    &:checked {
+      background-color: #1974D0;
+      border-color: #1974D0;
+      background-color: #E7F1FA;
+    }
+
+    & + svg {
+      position: absolute;
+      left: 3px;
+      width: 9px;
+      stroke: #CCCCCC;
+      fill: #CCCCCC;
+    }
+
+    &:checked + svg {
+      left: calc(30px - 12px);
+      stroke: #1974D0;
+      fill: #1974D0;
+    }
+  }
+
+  .Style_Switch.Flex_Row_Reverse > & {
+    & + svg {
+      position: absolute;
+      left: auto;
+      right: 18px;
+      width: 9px;
+      stroke: #CCCCCC;
+      fill: #CCCCCC;
+    }
+
+    &:checked + svg {
+      left: auto;
+      right: calc(30px - 26px);
+      stroke: #1974D0;
+      fill: #1974D0;
+    }
+  }
+}
+
+
+button.Button {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 17.5px 20px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  position: relative;
+
+  svg {
+    color: inherit;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+}
+
+.Button_Style_Save {
+  background: #488700;
+  color: white;
+}
+
+.Button_Style_Delete {
+  background: #BA3712;
+  color: white;
+}
+
+.Button_Style_Add {
+  background: #1491BA;
+  color: white;
+}
+
+.Button_Style_Filter {
+  background: #EAEAEA;
+  color: #444444;
+}
+
+.Button_Style_More {
+  background: transparent;
+  color: inherit;
+}
+
+.InputRange_Container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.InputRange,
+.InputMultiRange {
+  width: 100%;
+  height: 6px;
+  background-color: #CCCCCC;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.InputRange::-webkit-slider-thumb,
+.InputMultiRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  /* Set the width of the thumb */
+  height: 20px;
+  /* Set the height of the thumb */
+  background-color: #1974D0;
+  border-radius: 50%;
+  pointer-events: initial !important;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.InputRange::-moz-range-thumb,
+.InputMultiRange::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #1974D0;
+  border-radius: 50%;
+}
+
+.InputMultiRange {
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.InputMultiRange+.InputMultiRange {
+  position: absolute;
+  bottom: 0;
+}
+
+span.InputRange_Value {
+  position: absolute;
+  top: 0;
+  transform: translate(-12px, calc(-50% + 6px));
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1607843137);
+  pointer-events: none;
+  visibility: hidden;
+  width: 3.75ch;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 200ms ease;
+
+  @include apply-theme() {
+    background-color: t(content);
+    border-color: t(element-border);
+  }
+
+}
+
+.InputRange_Container:is(:focus-within, :hover) .InputRange_Value {
+  visibility: visible;
+  opacity: 1;
+}
+
+.InputImageUpload {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+
+  .Mobile & {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.InputImageUpload_Container.Hovering .InputImageUpload label {
+  background: #88c3ff8d;
+  border-style: solid;
+}
+
+.InputImageUpload {
+  img {
+    max-width: 100%;
+  }
+
+  .InputImageUpload_Preview {
+    border-radius: 10px;
+    border: solid 1px #CCCCCC;
+    box-sizing: border-box;
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &~label {
+      grid-column: auto;
+      padding: 0;
+      aspect-ratio: 1;
+    }
+
+    // &:first-of-type {
+    //   grid-column: span 2;
+    //   grid-row: span 2;
+    // }
+
+    button {
+      opacity: 0;
+      position: absolute;
+      top: 1%;
+      right: 1%;
+      transform: scale(0.75);
+      transition: opacity 300ms ease;
+    }
+
+    &:hover button {
+      opacity: 1;
+    }
+  }
+
+  label {
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #88C3FF0D;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #88C3FF;
+    padding: 50px 0;
+    border-radius: 5px;
+    text-align: center;
+    grid-column: span 7;
+    gap: 5px;
+    transition: border-width 300ms, background 300ms;
+
+    span {
+      max-width: 60%;
+    }
+  }
+}
+
+.InputDataList_Container,
+.CustomSelect_Container {
+  position: relative;
+
+  &.SelectAlwaysOpen {
+    .InputText_Holder {
+      display: none;
+    }
+
+    .ArrowSelect_Icon {
+      display: none;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+  }
+
+  & .ArrowSelect_Icon {
+    position: absolute;
+    width: fit-content;
+    height: 50px;
+    right: 20px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    pointer-events: none;
+
+    svg {
+
+      width: 16px;
+
+      @include apply-theme() {
+        stroke: t(text);
+      }
+
+    }
+
+  }
+}
+
+.InputDataList_List,
+.CustomSelect_List {
+  display: flex;
+  flex-direction: column;
+  border-color: #CCCCCC;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  padding: 0;
+  z-index: 1;
+  margin: 0;
+  transition: border-color 300ms;
+
+  .SelectAlwaysOpen>& {
+    position: relative;
+    width: 100%;
+    min-height: calc(44 * 5px + 2px);
+    max-height: calc(44 * 5px + 2px);
+    overflow: auto;
+  }
+
+  .InputText_Container:focus-within+&,
+  &:hover {
+    border-color: #438FE8;
+  }
+
+  @include apply-theme() {
+    background-color: t(content);
+  }
+
+  &>li {
+    cursor: pointer;
+    padding: 10px 20px;
+
+    @include apply-font('span');
+
+    &:hover,
+    &.Selected {
+      @include apply-theme() {
+        background-color: t(hover);
+      }
+    }
+  }
+}

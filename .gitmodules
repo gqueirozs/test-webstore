@@ -1,0 +1,3 @@
+[submodule "src/Shared"]
+	path = src/Shared
+	url = https://github.com/webstore-plataforma-de-ecommerce/painel-de-controle-lojas-vrs-react-global-elements

@@ -1,0 +1,15 @@
+.SelectBox_Container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  
+  & > span {
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    height: calc(100% - 29px);
+    margin-top: 29px;
+    justify-content: center;
+    align-items: center;
+  }
+}

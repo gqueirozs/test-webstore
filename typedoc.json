@@ -1,0 +1,11 @@
+{
+  "out": "docs",
+  "entryPoints": ["src"],
+  "entryPointStrategy": "expand",
+  "plugin": ["typedoc-theme-hierarchy"],
+  "theme": "hierarchy",
+  "exclude": [
+    "**/node_modules/**/*.*",
+    "**/test/**/*.*"
+  ]
+}

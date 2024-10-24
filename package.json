@@ -1,0 +1,64 @@
+{
+  "name": "painel-de-controle-lojas-vrs-react",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "https://github.com/webstore-plataforma-de-ecommerce/painel-ws-lojas-vrs-react-js",
+  "homepage": "https://painel-ws-testes.webstore.net.br/",
+  "dependencies": {
+    "@dnd-kit/core": "^6.0.8",
+    "@dnd-kit/modifiers": "^6.0.1",
+    "@dnd-kit/sortable": "^7.0.2",
+    "@dnd-kit/utilities": "^3.2.1",
+    "@react-input/mask": "^1.2.11",
+    "@types/react-query": "^1.2.9",
+    "framer-motion": "^10.16.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.16.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.1.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^16.18.53",
+    "@types/react": "^18.2.22",
+    "@types/react-beautiful-dnd": "^13.1.7",
+    "@types/react-dom": "^18.2.7",
+    "lodash": "^4.17.21",
+    "sass": "^1.68.0",
+    "typedoc": "^0.25.3",
+    "typedoc-theme-hierarchy": "^4.1.2",
+    "workbox-webpack-plugin": "^7.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.Card_View {
+  padding: 2rem 3rem;
+
+  @include apply-theme() {
+    background: t(content);
+  }
+}

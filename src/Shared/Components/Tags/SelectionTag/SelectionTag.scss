@@ -1,0 +1,33 @@
+@import 'Shared/Assets/Styles/_main.scss';
+
+.SelectionTag {
+
+  &, & svg {
+    @include apply-theme() {
+      background-color: #F1F1F1;
+      color: #444444;
+      fill: #444444;
+      stroke: #444444;
+    }
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+  span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      stroke: #444444;
+      fill: #444444;
+    }
+  }
+}

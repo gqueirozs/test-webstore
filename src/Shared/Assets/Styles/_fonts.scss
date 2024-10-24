@@ -1,0 +1,158 @@
+@import 'Shared/Assets/Styles/_theme.scss';
+
+$fonts: (
+  h1: (
+    font-size: 32px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    font-weight: 600,
+    user-select: none,
+    line-height: 34px
+  ),
+  h2: (
+    font-size: 28px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    font-weight: 600,
+    user-select: none,
+    line-height: 34px
+  ),
+  h3: (
+    font-size: 26px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    font-weight: 600,
+    user-select: none,
+    line-height: 34px
+  ),
+  h4: (
+    font-size: 24px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    font-weight: 600,
+    user-select: none,
+    line-height: 34px
+  ),
+  h5: (
+    font-size: 22px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    font-weight: 600,
+    user-select: none,
+    line-height: 34px
+  ),
+  h6: (
+    font-size: 18px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    font-weight: 600,
+    user-select: none,
+    line-height: 34px
+  ),
+  span: (
+    font-size: 14px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    text-decoration: none,
+    font-weight: 400,
+    line-height: 24px
+  ),
+  small: (
+    font-size: 12px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    font-weight: 400,
+    line-height: 22px
+  ),
+  label: (
+    font-size: 14px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    text-decoration: none,
+    font-weight: 400,
+    line-height: 24px
+  ),
+  b: (
+    font-size: 16px,
+    default--color: #444444,
+    dark--color: #FFFFFF,
+    text-decoration: none,
+    font-weight: 600,
+    line-height: 26px
+  ),
+  a: (
+    font-size: 14px,
+    default--color: #1974D0,
+    dark--color: #1974D0,
+    text-decoration: underline,
+    font-weight: 400,
+    line-height: 24px
+  ),
+  smallLink: (
+    font-size: 12px,
+    default--color: #1974D0,
+    dark--color: #1974D0,
+    text-decoration: underline,
+    font-weight: 400,
+    line-height: 22px
+  ),
+  error: (
+    font-size: 12px,
+    default--color: #D82828,
+    dark--color: #D82828,
+    font-weight: 400,
+    line-height: 26px
+  ),
+  placeholder: (
+    font-size: 14px,
+    default--color: #999999,
+    dark--color: #999999,
+    font-weight: 400,
+    line-height: 24px
+  ),
+  assistant: (
+    font-size: 12px,
+    default--color: #999999,
+    dark--color: #999999,
+    font-weight: 400,
+    line-height: 26px
+  ),
+  mandatory: (
+    font-size: 12px,
+    default--color: #D82828,
+    dark--color: #D82828,
+    font-weight: 600,
+    line-height: 18px
+  ),
+);
+
+@mixin apply-font($variation, $themePreset: 'normal') {
+  @if map-has-key($fonts, $variation) {
+    $font-styles: map-get($fonts, $variation);
+    
+    @each $property, $value in $font-styles {
+      @if ($property != 'dark--color' and $property != 'default--color') {
+        #{$property}: $value;
+      }
+    }
+    
+    @each $theme, $color in $themes {
+      .theme--#{$theme} & {
+        & > svg {
+          fill: map-get($font-styles, #{$theme}--color);
+          stroke: map-get($font-styles, #{$theme}--color);
+        }
+        color: map-get($font-styles, #{$theme}--color);
+      }
+    }
+  } @else {
+    @error "Font variation #{$variation} not found in $fonts map.";
+  }
+}
+
+@each $font-name, $font-styles in $fonts {
+  #{$font-name}, .#{$font-name} {
+    margin: 0;
+    @include apply-font(#{$font-name});
+  }
+}
