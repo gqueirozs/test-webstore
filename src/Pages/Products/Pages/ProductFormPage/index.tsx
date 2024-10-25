@@ -19,6 +19,7 @@ import {
 } from "Shared/Components";
 import Button from "Shared/Components/Inputs/Button";
 import ImageUpload from "Shared/Components/ImageUpload/ImageUpload";
+import { Close, More } from "Shared/Assets/Icons";
 
 // import { Container } from './styles';
 
@@ -302,14 +303,242 @@ export const ProductFormPage: FC = () => {
           </CardSection>
 
           <CardSection title="Produtos relacionados">
+            <table className="Products_Table">
+              <tbody>
+                {[1, 2, 3].map((_, index) => (
+                  <tr key={`product-01-${index}`}>
+                    <td colSpan={3}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          padding: "10px 0",
+                          ...(index !== 2 && {
+                            borderBottom: "1px solid #dedede",
+                          }),
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: 60,
+                            height: 60,
+                            padding: 20,
+                            border: "1px solid #cfcccc",
+                            borderRadius: 6,
+                            marginRight: 10,
+                          }}
+                        />
+                        <span style={{ flex: 1 }}>
+                          Nome do produto nome do produto...
+                        </span>
+                        <button>
+                          <Close />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <br />
+
             <InputButton icon={false} type="Filter">
               Adicionar produto
             </InputButton>
           </CardSection>
 
-          <CardSection title="Compre junto"></CardSection>
+          <CardSection title="Compre junto">
+            <table className="Products_Table">
+              <tbody>
+                {[1].map((_, index) => (
+                  <tr key={`product-02-${index}`}>
+                    <td colSpan={3}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          padding: "10px 0",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: 60,
+                            height: 60,
+                            padding: 20,
+                            border: "1px solid #cfcccc",
+                            borderRadius: 6,
+                            marginRight: 10,
+                          }}
+                        />
+                        <div>
+                          <span style={{ flex: 1 }}>
+                            Nome do produto nome do produto...
+                          </span>
+                          <br />
+                          <span style={{ flex: 1 }}>R$ 000,00</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-          <CardSection title="Otimização para buscadores"></CardSection>
+            <br />
+
+            <InputButton icon={false} type="Filter">
+              Adicionar produto
+            </InputButton>
+
+            <br />
+
+            <div className="Input_Columns">
+              <div style={{ flex: 1, marginTop: 5 }}>
+                <InputSelect
+                  label="Tipo de desconto"
+                  name="selectDiscountTypeProduct"
+                  defaultMaxOptions={1}
+                  defaultOption={0}
+                  placeholder="Selecione"
+                  options={[
+                    {
+                      value: "Percentual (%)",
+                    },
+                    {
+                      value: "Valor (R$)",
+                    },
+                  ]}
+                />
+              </div>
+
+              <div style={{ flex: 1 }}>
+                <TextInput
+                  label="Valor do desconto"
+                  name="variationSize"
+                  placeholder="0,00"
+                  leftAdditional="R$"
+                  iconAlign="Left"
+                  iconStyle="Box"
+                />
+              </div>
+            </div>
+
+            <br />
+
+            <div className="Input_Columns">
+              <TextInput
+                label="Valor total de produtos"
+                name="variationSize"
+                value="R$ 000,00"
+                disabled
+              />
+
+              <TextInput
+                label="Valor promocional"
+                name="variationSize"
+                value="R$ 000,00"
+                disabled
+              />
+            </div>
+          </CardSection>
+
+          <CardSection title="Otimização para buscadores">
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div>
+                <div style={{ marginBottom: 4 }}>
+                  <span>URL da página</span>
+                </div>
+
+                <span style={{ color: "#cbcbcb" }}>
+                  https://www.dominio.com.br
+                </span>
+              </div>
+
+              <div style={{ flex: 1, marginLeft: 10 }}>
+                <TextInput name="variationSize" value="nome-da-categoria" />
+              </div>
+            </div>
+
+            <br />
+
+            <TextInput
+              name="variationSize"
+              label="Título da página"
+              placeholder="Camisetas masculinas de diversos modelos"
+              max={100}
+              showMax
+            />
+
+            <br />
+
+            <TextArea
+              label="Descrição da categoria"
+              max={160}
+              showMax
+              name="productCategoryDescription"
+            />
+
+            <br />
+
+            <div style={{ display: "flex", alignItems: "flex-end" }}>
+              <div style={{ flex: 1, marginRight: 10 }}>
+                <TextInput
+                  name="variationSize"
+                  label="Insira palavras-chave desta página"
+                  placeholder="Camisetas masculinas de diversos modelos"
+                />
+              </div>
+
+              <div>
+                <InputButton icon={false} type="Filter">
+                  OK
+                </InputButton>
+              </div>
+            </div>
+
+            <br />
+
+            <div className="Flex_Row g-3">
+              <SelectionTag label="exemplo" action={() => alert("exemplo")} />
+              <SelectionTag
+                label="aqui vai o exemplo"
+                action={() => alert("aqui vai o exemplo")}
+              />
+            </div>
+
+            <br />
+
+            <hr />
+
+            <div className="Preview">
+              <h1>Pré-visualização no Google</h1>
+
+              <div className="Preview_Domain">
+                <div className="Preview_DomainIcon">
+                  <span>D</span>
+                </div>
+
+                <div>
+                  <span>dominio.com.br</span>
+
+                  <br />
+
+                  <span>https://www.dominio.com.br/nome-da-categoria</span>
+                </div>
+              </div>
+
+              <div className="Preview_Content">
+                <h2>Título da página</h2>
+
+                <p>
+                  description description description description description
+                  description description description description description
+                  description description description 
+                </p>
+              </div>
+            </div>
+          </CardSection>
         </div>
 
         <div className="Cards_RightColumn">
@@ -449,10 +678,7 @@ export const ProductFormPage: FC = () => {
 
             <div className="Flex_Row g-3">
               <SelectionTag label="Camiseta" action={() => alert("Camiseta")} />
-              <SelectionTag
-                label="Regata"
-                action={() => alert("Regata")}
-              />
+              <SelectionTag label="Regata" action={() => alert("Regata")} />
             </div>
           </CardSection>
 
@@ -475,7 +701,53 @@ export const ProductFormPage: FC = () => {
             <TextInput label="CNAE" name="ean" />
           </CardSection>
 
-          <CardSection title="Tabela de preços"></CardSection>
+          <CardSection title="Tabela de preços">
+            <TextInput
+              label="Preço de venda"
+              name="priceSale"
+              placeholder="0,00"
+              leftAdditional="R$"
+              iconAlign="Left"
+            />
+
+            <br />
+
+            <TextInput
+              label="Preço promocional"
+              name="priceDiscount"
+              placeholder="0,00"
+              leftAdditional="R$"
+              iconAlign="Left"
+            />
+
+            <br />
+
+            <TextInput
+              label="Quantidade mínima de compra"
+              name="quantity"
+              placeholder="1"
+              type="number"
+            />
+
+            <br />
+
+            <TextInput
+              label="Quantidade máxima de compra"
+              name="quantity"
+              placeholder="1"
+              type="number"
+            />
+
+            <br />
+
+            <hr />
+
+            <div style={{ textAlign: "center" }}>
+              <a href="">Gerar código aleatório</a>
+            </div>
+
+            <hr />
+          </CardSection>
         </div>
       </div>
     </div>

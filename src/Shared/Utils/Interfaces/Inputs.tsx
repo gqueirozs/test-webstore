@@ -33,6 +33,7 @@ interface ITextInput {
   onSearch?: (value: string) => void;
   rightAdditional?: string;
   leftAdditional?: string;
+  disabled?: boolean;
 }
 
 

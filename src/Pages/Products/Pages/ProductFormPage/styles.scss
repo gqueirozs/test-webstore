@@ -58,3 +58,68 @@
     cursor: pointer;
   }
 }
+
+.Products_Table {
+  width: 100%;
+  // table-layout: fixed;
+
+  td {
+    font-size: 16px;
+  }
+
+  button {
+    outline: 0;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.Preview {
+  background-color: #FFFFFF;
+  border-color: #DDD;
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.14);
+  padding: 20px;
+  margin-top: 20px;
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .Preview_Domain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 6px;
+
+    .Preview_DomainIcon {
+      border-radius: 100%;
+      background-color: #DDD;
+      height: 40px;
+      width: 40px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      margin-right: 10px;
+      color: #ababab;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .Preview_Content {
+    h2 {
+      color: #8ab4f8;
+      font-size: 24px;
+      margin-top: 6px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+}

@@ -38,6 +38,7 @@ const Text = ({
   onClick,
   rightAdditional,
   leftAdditional,
+  disabled
 }: ITextInput): ReactElement => {
   const defaultValue = useMemo(() => value, [value]);
 
@@ -95,6 +96,7 @@ const Text = ({
         )}
 
         <input
+          disabled={disabled}
           {...(mask ? { ref: inputRef } : {})}
           {...(mask ? { pattern: maskToPattern(mask) } : {})}
           className={`InputText ${className}`}
